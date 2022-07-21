@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @Bhaumik182001
 - 👀 I’m interested in Frontend Web Development.
 - 🔭 I am working on a react, next.js and thirdweb.
-- 🌱 I’m currently about Blockchain and solidity.
+- 🌱 I’m currently learning about Blockchain and solidity.
 - 📫 How to reach me (bhaumik182001@gmail.com)
 
 
