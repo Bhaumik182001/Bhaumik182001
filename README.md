@@ -4,4 +4,5 @@
 - 🌱 I’m currently learning about Blockchain and solidity.
 - 📫 How to reach me (bhaumik182001@gmail.com)
 
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,wasm)](https://skillicons.dev)
 
