@@ -4,8 +4,9 @@
 
 ## 🌐 Socials:
 <div style={{display: flex}}>
-<img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="40" height="40" href="https://www.linkedin.com/in/bhaumik182001/"/>
-<img width="40" height="40" src="https://i.postimg.cc/XJz7jwNP/coding.png" href="https://bhaumik-portfolio.netlify.app/">
+  <a href="https://www.linkedin.com/in/bhaumik182001/"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="40" height="40"/></a>
+  <a href="https://bhaumik-portfolio.netlify.app/"><img width="40" height="40" src="https://i.postimg.cc/XJz7jwNP/coding.png" />
+</a>
 </div>
 
 
