@@ -102,11 +102,13 @@ Engineering isn't just about code; it's about discipline and balance. When I am 
 * **Building Resilience:** Applying the same strict consistency required in tech to my structured heavy-lifting and bodybuilding routines.
 
 ---
-
 ## 🌐 Let's Connect
-<div align="left">
-  <a href="https://www.linkedin.com/in/bhaumik182001/"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="40" height="40" alt="LinkedIn"/></a>&nbsp;&nbsp;<a href="https://portfolio-deploy-six-khaki.vercel.app/"><img src="https://cdn-icons-png.flaticon.com/512/1005/1005141.png" width="40" height="40" alt="Portfolio"/></a>
-</div>
+<table>
+  <tr>
+    <td align="center"><a href="https://www.linkedin.com/in/bhaumik182001/"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="40" height="40" alt="LinkedIn"/></a></td>
+    <td align="center"><a href="https://portfolio-deploy-six-khaki.vercel.app/"><img src="https://cdn-icons-png.flaticon.com/512/1005/1005141.png" width="40" height="40" alt="Portfolio"/></a></td>
+  </tr>
+</table>
 
 <br>
 
