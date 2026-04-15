@@ -41,10 +41,10 @@ graph TD
     %% Cloud Infrastructure Layer
     subgraph GCP ["Google Cloud Platform (GKE Cluster)"]
         Ingress["🌐 Global HTTP(S) Load Balancer<br/>(medisync-api.duckdns.org)"]:::cloud
-        Gateway["🔀 API Gateway<br/>(Java 21 / Spring Cloud)"]:::service
-        Discovery["🔍 Eureka Registry<br/>(Service Discovery)"]:::service
         Identity["🔐 Identity Service<br/>(JWT Auth)"]:::service
         Core["⚙️ Core Service<br/>(Schedule / Providers)"]:::service
+        Orchestrator["🎼 Saga Orchestrator<br/>(Transaction State Machine)"]:::service
+        Notify["📬 Notification Service<br/>(Event-Driven Alerts)"]:::service
     end
 
     %% Data & Messaging Layer
@@ -52,29 +52,28 @@ graph TD
         Mongo[("MongoDB Atlas<br/>(User Credentials)")]:::database
         Neon[("Neon Postgres<br/>(Relational Schema)")]:::database
         Redis[("Redis<br/>(Caching Layer)")]:::database
-        Rabbit[["RabbitMQ<br/>(Saga Orchestration)"]]:::broker
+        Rabbit[["RabbitMQ<br/>(Message Broker)"]]:::broker
     end
 
     %% Traffic Flow
     User -->|HTTPS| UI
     UI -->|Axios w/ JWT| Ingress
-    Ingress -->|Route| Gateway
     
-    Gateway -->|Forward| Identity
-    Gateway -->|Forward| Core
+    %% K8s Native Routing (Directly from Ingress)
+    Ingress -->|Route| Identity
+    Ingress -->|Route| Core
 
-    %% Service Discovery Flow
-    Gateway -.->|Register| Discovery
-    Identity -.->|Register| Discovery
-    Core -.->|Register| Discovery
-
-    %% Database & Messaging Flow
+    %% Database & Caching Flow
     Identity ==>|Read/Write| Mongo
     Core ==>|JPA / Hibernate| Neon
     Core -.->|Cache| Redis
     
-    Identity <==>|Async Events| Rabbit
-    Core <==>|Async Events| Rabbit
+    %% Saga Orchestration & Event Flow
+    Orchestrator <==>|Manage State & Commands| Rabbit
+    Identity <==>|Execute & Reply| Rabbit
+    Core <==>|Execute & Reply| Rabbit
+    Rabbit ==>|Fire & Forget Events| Notify
+
 ```
 
 * **Core Stack:** Java 21, Spring Boot 4.x, GCP (GKE), Terraform, PostgreSQL, MongoDB, RabbitMQ.
